@@ -27,7 +27,7 @@ module Fetch_Cycle(clk, rst, PCSrc_final, PCTarget_final, InstrD, PCD);
     // Declare PC Counter
     PC m_PC(
         .clk(clk),
-        .rst(start),
+        .rst(rst),
         .pc_i(input_to_PC),          
         .pc_o(output_from_PC)       
         );
