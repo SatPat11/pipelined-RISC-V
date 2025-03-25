@@ -1,0 +1,1795 @@
+$date
+	Tue Mar 25 21:29:00 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_riscv_pipelined $end
+$var reg 1 ! clk $end
+$var reg 1 " rst $end
+$scope module pipeDUT $end
+$var wire 1 # RegWriteW $end
+$var wire 1 ! clk $end
+$var wire 1 " rst $end
+$var wire 32 $ readDataW [31:0] $end
+$var wire 1 % memtoRegW $end
+$var wire 1 & memtoRegM $end
+$var wire 1 ' memtoRegE $end
+$var wire 32 ( immediateE [31:0] $end
+$var wire 1 ) ZeroM $end
+$var wire 5 * Write_reg_4bit [4:0] $end
+$var wire 32 + WriteDataW [31:0] $end
+$var wire 1 , RegWriteM $end
+$var wire 1 - RegWriteE $end
+$var wire 32 . ReadData2M [31:0] $end
+$var wire 32 / ReadData2E [31:0] $end
+$var wire 32 0 ReadData1E [31:0] $end
+$var wire 32 1 PCTarget_final [31:0] $end
+$var wire 32 2 PCTargetM [31:0] $end
+$var wire 1 3 PCSrc_final $end
+$var wire 32 4 PCE [31:0] $end
+$var wire 32 5 PCD [31:0] $end
+$var wire 1 6 MemWriteM $end
+$var wire 1 7 MemWriteE $end
+$var wire 1 8 MemReadM $end
+$var wire 1 9 MemReadE $end
+$var wire 32 : InstrW [31:0] $end
+$var wire 32 ; InstrM [31:0] $end
+$var wire 32 < InstrE [31:0] $end
+$var wire 32 = InstrD [31:0] $end
+$var wire 1 > BranchM $end
+$var wire 1 ? BranchE $end
+$var wire 1 @ ALUSrcE $end
+$var wire 32 A ALUOutW [31:0] $end
+$var wire 32 B ALUOutM [31:0] $end
+$var wire 2 C ALUOpE [1:0] $end
+$scope module decode_cycle_inst $end
+$var wire 2 D ALUOpE [1:0] $end
+$var wire 1 @ ALUSrcE $end
+$var wire 1 ? BranchE $end
+$var wire 32 E InstrE [31:0] $end
+$var wire 1 9 MemReadE $end
+$var wire 1 7 MemWriteE $end
+$var wire 32 F PCE [31:0] $end
+$var wire 32 G ReadData1E [31:0] $end
+$var wire 32 H ReadData2E [31:0] $end
+$var wire 1 - RegWriteE $end
+$var wire 1 # RegWriteW $end
+$var wire 1 ! clk $end
+$var wire 32 I immediateE [31:0] $end
+$var wire 1 ' memtoRegE $end
+$var wire 1 " rst $end
+$var wire 1 J memtoRegD $end
+$var wire 32 K immediateD [31:0] $end
+$var wire 5 L Write_reg_4bit [4:0] $end
+$var wire 32 M WriteDataW [31:0] $end
+$var wire 1 N RegWriteD $end
+$var wire 32 O ReadData2D [31:0] $end
+$var wire 32 P ReadData1D [31:0] $end
+$var wire 32 Q PCD [31:0] $end
+$var wire 1 R MemWriteD $end
+$var wire 1 S MemReadD $end
+$var wire 32 T InstrD [31:0] $end
+$var wire 1 U BranchD $end
+$var wire 1 V ALUSrcD $end
+$var wire 2 W ALUOpD [1:0] $end
+$var reg 2 X ALUOpD_r [1:0] $end
+$var reg 1 @ ALUSrcD_r $end
+$var reg 1 Y BranchD_r $end
+$var reg 32 Z InstrD_r [31:0] $end
+$var reg 1 [ MemReadD_r $end
+$var reg 1 \ MemWriteD_r $end
+$var reg 32 ] PCD_r [31:0] $end
+$var reg 32 ^ ReadData1D_r [31:0] $end
+$var reg 32 _ ReadData2D_r [31:0] $end
+$var reg 1 ` RegWriteD_r $end
+$var reg 32 a immediateD_r [31:0] $end
+$var reg 1 b memtoRegD_r $end
+$scope module m_Control $end
+$var wire 1 V ALUSrc $end
+$var wire 7 c opcode [6:0] $end
+$var wire 1 N regWrite $end
+$var wire 1 J memtoReg $end
+$var wire 1 R memWrite $end
+$var wire 1 S memRead $end
+$var wire 1 U branch $end
+$var wire 2 d ALUOp [1:0] $end
+$upscope $end
+$scope module m_ImmGen $end
+$var wire 7 e opcode [6:0] $end
+$var wire 32 f inst [31:0] $end
+$var parameter 32 g Width $end
+$var reg 32 h imm [31:0] $end
+$upscope $end
+$scope module m_Register $end
+$var wire 1 ! clk $end
+$var wire 5 i readReg1 [4:0] $end
+$var wire 5 j readReg2 [4:0] $end
+$var wire 1 # regWrite $end
+$var wire 1 " rst $end
+$var wire 5 k writeReg [4:0] $end
+$var wire 32 l writeData [31:0] $end
+$var wire 32 m readData2 [31:0] $end
+$var wire 32 n readData1 [31:0] $end
+$upscope $end
+$upscope $end
+$scope module execute_cycle_inst $end
+$var wire 2 o ALUOpE [1:0] $end
+$var wire 32 p ALUOutM [31:0] $end
+$var wire 1 @ ALUSrcE $end
+$var wire 1 ? BranchE $end
+$var wire 1 > BranchM $end
+$var wire 32 q InstrE [31:0] $end
+$var wire 32 r InstrM [31:0] $end
+$var wire 1 9 MemReadE $end
+$var wire 1 8 MemReadM $end
+$var wire 1 7 MemWriteE $end
+$var wire 1 6 MemWriteM $end
+$var wire 32 s PCE [31:0] $end
+$var wire 32 t PCTargetM [31:0] $end
+$var wire 32 u ReadData1E [31:0] $end
+$var wire 32 v ReadData2E [31:0] $end
+$var wire 32 w ReadData2M [31:0] $end
+$var wire 1 - RegWriteE $end
+$var wire 1 , RegWriteM $end
+$var wire 1 ! clk $end
+$var wire 32 x immediateE [31:0] $end
+$var wire 1 ' memtoRegE $end
+$var wire 1 & memtoRegM $end
+$var wire 1 " rst $end
+$var wire 1 y zeroE $end
+$var wire 32 z mux_input_to_ALU_BE [31:0] $end
+$var wire 1 ) ZeroM $end
+$var wire 32 { PCTargetE [31:0] $end
+$var wire 32 | ALUOutE [31:0] $end
+$var wire 4 } ALUCtl [3:0] $end
+$var reg 32 ~ ALUOutE_r [31:0] $end
+$var reg 1 > BranchE_r $end
+$var reg 32 !" InstrE_r [31:0] $end
+$var reg 1 "" MemReadE_r $end
+$var reg 1 #" MemWriteE_r $end
+$var reg 32 $" PCTargetE_r [31:0] $end
+$var reg 32 %" ReadData2E_r [31:0] $end
+$var reg 1 &" RegWriteE_r $end
+$var reg 1 '" memtoRegE_r $end
+$var reg 1 ) zeroE_r $end
+$scope module m_ALU $end
+$var wire 32 (" A [31:0] $end
+$var wire 32 )" ori [31:0] $end
+$var wire 1 y zero $end
+$var wire 32 *" sum [31:0] $end
+$var wire 32 +" slti [31:0] $end
+$var wire 32 ," diff [31:0] $end
+$var wire 32 -" B [31:0] $end
+$var wire 4 ." ALUCtl [3:0] $end
+$var reg 32 /" ALUOut [31:0] $end
+$upscope $end
+$scope module m_ALUCtrl $end
+$var wire 2 0" ALUOp [1:0] $end
+$var wire 3 1" funct3 [2:0] $end
+$var wire 1 2" funct7 $end
+$var reg 4 3" ALUCtl [3:0] $end
+$upscope $end
+$scope module m_Adder_2 $end
+$var wire 32 4" a [31:0] $end
+$var wire 32 5" b [31:0] $end
+$var wire 32 6" sum [31:0] $end
+$upscope $end
+$scope module m_Mux_ALU $end
+$var wire 32 7" s0 [31:0] $end
+$var wire 32 8" s1 [31:0] $end
+$var wire 1 @ sel $end
+$var wire 32 9" out [31:0] $end
+$var parameter 32 :" size $end
+$upscope $end
+$upscope $end
+$scope module fetch_cycle_inst $end
+$var wire 32 ;" PCD [31:0] $end
+$var wire 1 ! clk $end
+$var wire 1 " rst $end
+$var wire 1 <" start $end
+$var wire 32 =" output_from_PC [31:0] $end
+$var wire 32 >" instruction [31:0] $end
+$var wire 32 ?" input_to_PC [31:0] $end
+$var wire 32 @" PCTarget_final [31:0] $end
+$var wire 1 3 PCSrc_final $end
+$var wire 32 A" PCPlus4F [31:0] $end
+$var wire 32 B" InstrD [31:0] $end
+$var reg 32 C" instruction_reg [31:0] $end
+$var reg 32 D" output_from_PC_reg [31:0] $end
+$scope module m_Adder_1 $end
+$var wire 32 E" b [31:0] $end
+$var wire 32 F" sum [31:0] $end
+$var wire 32 G" a [31:0] $end
+$upscope $end
+$scope module m_InstMem $end
+$var wire 32 H" readAddr [31:0] $end
+$var wire 32 I" inst [31:0] $end
+$upscope $end
+$scope module m_Mux_PC $end
+$var wire 32 J" s0 [31:0] $end
+$var wire 1 3 sel $end
+$var wire 32 K" s1 [31:0] $end
+$var wire 32 L" out [31:0] $end
+$var parameter 32 M" size $end
+$upscope $end
+$scope module m_PC $end
+$var wire 1 ! clk $end
+$var wire 32 N" pc_i [31:0] $end
+$var wire 1 <" rst $end
+$var reg 32 O" pc_o [31:0] $end
+$upscope $end
+$upscope $end
+$scope module memory_cycle_inst $end
+$var wire 32 P" ALUOutM [31:0] $end
+$var wire 32 Q" ALUOutW [31:0] $end
+$var wire 1 > BranchM $end
+$var wire 32 R" InstrM [31:0] $end
+$var wire 32 S" InstrW [31:0] $end
+$var wire 1 8 MemReadM $end
+$var wire 1 6 MemWriteM $end
+$var wire 1 3 PCSrc_final $end
+$var wire 32 T" PCTargetM [31:0] $end
+$var wire 32 U" PCTarget_final [31:0] $end
+$var wire 32 V" ReadData2M [31:0] $end
+$var wire 1 , RegWriteM $end
+$var wire 1 # RegWriteW $end
+$var wire 1 ) ZeroM $end
+$var wire 1 ! clk $end
+$var wire 1 & memtoRegM $end
+$var wire 1 % memtoRegW $end
+$var wire 32 W" readDataW [31:0] $end
+$var wire 1 " rst $end
+$var wire 32 X" readDataM [31:0] $end
+$var reg 32 Y" ALUOutM_r [31:0] $end
+$var reg 32 Z" InstrM_r [31:0] $end
+$var reg 1 [" PCSrcM_r $end
+$var reg 32 \" PCTargetM_r [31:0] $end
+$var reg 1 ]" RegWriteM_r $end
+$var reg 1 % memtoRegM_r $end
+$var reg 32 ^" readDataM_r [31:0] $end
+$scope module m_DataMemory $end
+$var wire 32 _" address [31:0] $end
+$var wire 1 ! clk $end
+$var wire 1 8 memRead $end
+$var wire 1 6 memWrite $end
+$var wire 1 " rst $end
+$var wire 32 `" writeData [31:0] $end
+$var reg 32 a" readData [31:0] $end
+$upscope $end
+$upscope $end
+$scope module writeback_inst $end
+$var wire 32 b" ALUOutW [31:0] $end
+$var wire 32 c" InstrW [31:0] $end
+$var wire 1 # RegWriteW $end
+$var wire 1 # RegWrite_final_to_E $end
+$var wire 1 % memtoRegW $end
+$var wire 32 d" readDataW [31:0] $end
+$var wire 5 e" Write_reg_4bit [4:0] $end
+$var wire 32 f" Write_data_Register_final [31:0] $end
+$scope module m_Mux_WB $end
+$var wire 32 g" s0 [31:0] $end
+$var wire 32 h" s1 [31:0] $end
+$var wire 1 % sel $end
+$var wire 32 i" out [31:0] $end
+$var parameter 32 j" size $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b100000 j"
+b100000 M"
+b100000 :"
+b100000 g
+$end
+#0
+$dumpvars
+b0 i"
+b0 h"
+b0 g"
+b0 f"
+b0 e"
+b0 d"
+b0 c"
+b0 b"
+b0 a"
+b0 `"
+b0 _"
+b0 ^"
+0]"
+b0 \"
+0["
+b0 Z"
+b0 Y"
+b0 X"
+b0 W"
+b0 V"
+b0 U"
+b0 T"
+b0 S"
+b0 R"
+b0 Q"
+b0 P"
+bx O"
+bx N"
+bx L"
+b0 K"
+bx J"
+bx I"
+bx H"
+bx G"
+bx F"
+b100 E"
+b0 D"
+b0 C"
+b0 B"
+bx A"
+b0 @"
+bx ?"
+bx >"
+bx ="
+z<"
+b0 ;"
+b0 9"
+b0 8"
+b0 7"
+b0 6"
+b0 5"
+b0 4"
+b0 3"
+02"
+b0 1"
+b0 0"
+b0 /"
+b0 ."
+b0 -"
+b0 ,"
+b0 +"
+b0 *"
+b0 )"
+b0 ("
+0'"
+0&"
+b0 %"
+b0 $"
+0#"
+0""
+b0 !"
+b0 ~
+b0 }
+b0 |
+b0 {
+b0 z
+1y
+b0 x
+b0 w
+b0 v
+b0 u
+b0 t
+b0 s
+b0 r
+b0 q
+b0 p
+b0 o
+b0 n
+b0 m
+b0 l
+b0 k
+b0 j
+b0 i
+b0 h
+b0 f
+b0 e
+b11 d
+b0 c
+0b
+b0 a
+0`
+b0 _
+b0 ^
+b0 ]
+0\
+0[
+b0 Z
+0Y
+b0 X
+b11 W
+0V
+0U
+b0 T
+0S
+0R
+b0 Q
+b0 P
+b0 O
+0N
+b0 M
+b0 L
+b0 K
+0J
+b0 I
+b0 H
+b0 G
+b0 F
+b0 E
+b0 D
+b0 C
+b0 B
+b0 A
+0@
+0?
+0>
+b0 =
+b0 <
+b0 ;
+b0 :
+09
+08
+07
+06
+b0 5
+b0 4
+03
+b0 2
+b0 1
+b0 0
+b0 /
+b0 .
+0-
+0,
+b0 +
+b0 *
+0)
+b0 (
+0'
+0&
+0%
+b0 $
+x#
+0"
+0!
+$end
+#5
+1!
+#10
+0!
+1"
+#15
+xV
+xN
+bx W
+bx d
+bx O
+bx m
+bx P
+bx n
+bx e
+xU
+xS
+xJ
+xR
+bx c
+bx j
+bx i
+bx 5
+bx Q
+bx ;"
+bx D"
+bx =
+bx T
+bx f
+bx B"
+bx C"
+b11 C
+b11 D
+b11 o
+b11 0"
+b11 X
+1)
+1!
+#20
+0!
+#25
+x2"
+bx 1"
+bx )"
+xy
+bx |
+bx /"
+b0x +"
+bx z
+bx -"
+bx 9"
+bx <
+bx E
+bx Z
+bx q
+bx {
+bx 6"
+bx 4
+bx F
+bx ]
+bx s
+bx 5"
+bx /
+bx H
+bx _
+bx v
+bx 7"
+bx *"
+bx ,"
+bx 0
+bx G
+bx ^
+bx u
+bx ("
+bx C
+bx D
+bx o
+bx 0"
+bx X
+x7
+x\
+x'
+xb
+x9
+x[
+x-
+x`
+x@
+x?
+xY
+1!
+#30
+0!
+#35
+x3
+bx 1
+bx @"
+bx K"
+bx U"
+bx 2
+bx t
+bx $"
+bx T"
+bx B
+bx p
+bx P"
+bx _"
+bx ~
+x)
+bx .
+bx w
+bx V"
+bx `"
+bx %"
+bx ;
+bx r
+bx R"
+bx !"
+x6
+x#"
+x&
+x'"
+x8
+x""
+x,
+x&"
+x>
+1!
+#40
+0!
+#45
+bx *
+bx L
+bx k
+bx e"
+bx +
+bx M
+bx l
+bx f"
+bx i"
+bx :
+bx S"
+bx Z"
+bx c"
+bx A
+bx Q"
+bx Y"
+bx b"
+bx g"
+x%
+x]"
+1!
+#50
+0!
+#55
+1!
+#60
+0!
+#65
+1!
+#70
+0!
+#75
+1!
+#80
+0!
+#85
+1!
+#90
+0!
+#95
+1!
+#100
+0!
+#105
+1!
+#110
+0!
+#115
+1!
+#120
+0!
+#125
+1!
+#130
+0!
+#135
+1!
+#140
+0!
+#145
+1!
+#150
+0!
+#155
+1!
+#160
+0!
+#165
+1!
+#170
+0!
+#175
+1!
+#180
+0!
+#185
+1!
+#190
+0!
+#195
+1!
+#200
+0!
+#205
+1!
+#210
+0!
+#215
+1!
+#220
+0!
+#225
+1!
+#230
+0!
+#235
+1!
+#240
+0!
+#245
+1!
+#250
+0!
+#255
+1!
+#260
+0!
+#265
+1!
+#270
+0!
+#275
+1!
+#280
+0!
+#285
+1!
+#290
+0!
+#295
+1!
+#300
+0!
+#305
+1!
+#310
+0!
+#315
+1!
+#320
+0!
+#325
+1!
+#330
+0!
+#335
+1!
+#340
+0!
+#345
+1!
+#350
+0!
+#355
+1!
+#360
+0!
+#365
+1!
+#370
+0!
+#375
+1!
+#380
+0!
+#385
+1!
+#390
+0!
+#395
+1!
+#400
+0!
+#405
+1!
+#410
+0!
+#415
+1!
+#420
+0!
+#425
+1!
+#430
+0!
+#435
+1!
+#440
+0!
+#445
+1!
+#450
+0!
+#455
+1!
+#460
+0!
+#465
+1!
+#470
+0!
+#475
+1!
+#480
+0!
+#485
+1!
+#490
+0!
+#495
+1!
+#500
+0!
+#505
+1!
+#510
+0!
+#515
+1!
+#520
+0!
+#525
+1!
+#530
+0!
+#535
+1!
+#540
+0!
+#545
+1!
+#550
+0!
+#555
+1!
+#560
+0!
+#565
+1!
+#570
+0!
+#575
+1!
+#580
+0!
+#585
+1!
+#590
+0!
+#595
+1!
+#600
+0!
+#605
+1!
+#610
+0!
+#615
+1!
+#620
+0!
+#625
+1!
+#630
+0!
+#635
+1!
+#640
+0!
+#645
+1!
+#650
+0!
+#655
+1!
+#660
+0!
+#665
+1!
+#670
+0!
+#675
+1!
+#680
+0!
+#685
+1!
+#690
+0!
+#695
+1!
+#700
+0!
+#705
+1!
+#710
+0!
+#715
+1!
+#720
+0!
+#725
+1!
+#730
+0!
+#735
+1!
+#740
+0!
+#745
+1!
+#750
+0!
+#755
+1!
+#760
+0!
+#765
+1!
+#770
+0!
+#775
+1!
+#780
+0!
+#785
+1!
+#790
+0!
+#795
+1!
+#800
+0!
+#805
+1!
+#810
+0!
+#815
+1!
+#820
+0!
+#825
+1!
+#830
+0!
+#835
+1!
+#840
+0!
+#845
+1!
+#850
+0!
+#855
+1!
+#860
+0!
+#865
+1!
+#870
+0!
+#875
+1!
+#880
+0!
+#885
+1!
+#890
+0!
+#895
+1!
+#900
+0!
+#905
+1!
+#910
+0!
+#915
+1!
+#920
+0!
+#925
+1!
+#930
+0!
+#935
+1!
+#940
+0!
+#945
+1!
+#950
+0!
+#955
+1!
+#960
+0!
+#965
+1!
+#970
+0!
+#975
+1!
+#980
+0!
+#985
+1!
+#990
+0!
+#995
+1!
+#1000
+0!
+#1005
+1!
+#1010
+0!
+#1015
+1!
+#1020
+0!
+#1025
+1!
+#1030
+0!
+#1035
+1!
+#1040
+0!
+#1045
+1!
+#1050
+0!
+#1055
+1!
+#1060
+0!
+#1065
+1!
+#1070
+0!
+#1075
+1!
+#1080
+0!
+#1085
+1!
+#1090
+0!
+#1095
+1!
+#1100
+0!
+#1105
+1!
+#1110
+0!
+#1115
+1!
+#1120
+0!
+#1125
+1!
+#1130
+0!
+#1135
+1!
+#1140
+0!
+#1145
+1!
+#1150
+0!
+#1155
+1!
+#1160
+0!
+#1165
+1!
+#1170
+0!
+#1175
+1!
+#1180
+0!
+#1185
+1!
+#1190
+0!
+#1195
+1!
+#1200
+0!
+#1205
+1!
+#1210
+0!
+#1215
+1!
+#1220
+0!
+#1225
+1!
+#1230
+0!
+#1235
+1!
+#1240
+0!
+#1245
+1!
+#1250
+0!
+#1255
+1!
+#1260
+0!
+#1265
+1!
+#1270
+0!
+#1275
+1!
+#1280
+0!
+#1285
+1!
+#1290
+0!
+#1295
+1!
+#1300
+0!
+#1305
+1!
+#1310
+0!
+#1315
+1!
+#1320
+0!
+#1325
+1!
+#1330
+0!
+#1335
+1!
+#1340
+0!
+#1345
+1!
+#1350
+0!
+#1355
+1!
+#1360
+0!
+#1365
+1!
+#1370
+0!
+#1375
+1!
+#1380
+0!
+#1385
+1!
+#1390
+0!
+#1395
+1!
+#1400
+0!
+#1405
+1!
+#1410
+0!
+#1415
+1!
+#1420
+0!
+#1425
+1!
+#1430
+0!
+#1435
+1!
+#1440
+0!
+#1445
+1!
+#1450
+0!
+#1455
+1!
+#1460
+0!
+#1465
+1!
+#1470
+0!
+#1475
+1!
+#1480
+0!
+#1485
+1!
+#1490
+0!
+#1495
+1!
+#1500
+0!
+#1505
+1!
+#1510
+0!
+#1515
+1!
+#1520
+0!
+#1525
+1!
+#1530
+0!
+#1535
+1!
+#1540
+0!
+#1545
+1!
+#1550
+0!
+#1555
+1!
+#1560
+0!
+#1565
+1!
+#1570
+0!
+#1575
+1!
+#1580
+0!
+#1585
+1!
+#1590
+0!
+#1595
+1!
+#1600
+0!
+#1605
+1!
+#1610
+0!
+#1615
+1!
+#1620
+0!
+#1625
+1!
+#1630
+0!
+#1635
+1!
+#1640
+0!
+#1645
+1!
+#1650
+0!
+#1655
+1!
+#1660
+0!
+#1665
+1!
+#1670
+0!
+#1675
+1!
+#1680
+0!
+#1685
+1!
+#1690
+0!
+#1695
+1!
+#1700
+0!
+#1705
+1!
+#1710
+0!
+#1715
+1!
+#1720
+0!
+#1725
+1!
+#1730
+0!
+#1735
+1!
+#1740
+0!
+#1745
+1!
+#1750
+0!
+#1755
+1!
+#1760
+0!
+#1765
+1!
+#1770
+0!
+#1775
+1!
+#1780
+0!
+#1785
+1!
+#1790
+0!
+#1795
+1!
+#1800
+0!
+#1805
+1!
+#1810
+0!
+#1815
+1!
+#1820
+0!
+#1825
+1!
+#1830
+0!
+#1835
+1!
+#1840
+0!
+#1845
+1!
+#1850
+0!
+#1855
+1!
+#1860
+0!
+#1865
+1!
+#1870
+0!
+#1875
+1!
+#1880
+0!
+#1885
+1!
+#1890
+0!
+#1895
+1!
+#1900
+0!
+#1905
+1!
+#1910
+0!
+#1915
+1!
+#1920
+0!
+#1925
+1!
+#1930
+0!
+#1935
+1!
+#1940
+0!
+#1945
+1!
+#1950
+0!
+#1955
+1!
+#1960
+0!
+#1965
+1!
+#1970
+0!
+#1975
+1!
+#1980
+0!
+#1985
+1!
+#1990
+0!
+#1995
+1!
+#2000
+0!
+#2005
+1!
+#2010
+0!
+#2015
+1!
+#2020
+0!
+#2025
+1!
+#2030
+0!
+#2035
+1!
+#2040
+0!
+#2045
+1!
+#2050
+0!
+#2055
+1!
+#2060
+0!
+#2065
+1!
+#2070
+0!
+#2075
+1!
+#2080
+0!
+#2085
+1!
+#2090
+0!
+#2095
+1!
+#2100
+0!
+#2105
+1!
+#2110
+0!
+#2115
+1!
+#2120
+0!
+#2125
+1!
+#2130
+0!
+#2135
+1!
+#2140
+0!
+#2145
+1!
+#2150
+0!
+#2155
+1!
+#2160
+0!
+#2165
+1!
+#2170
+0!
+#2175
+1!
+#2180
+0!
+#2185
+1!
+#2190
+0!
+#2195
+1!
+#2200
+0!
+#2205
+1!
+#2210
+0!
+#2215
+1!
+#2220
+0!
+#2225
+1!
+#2230
+0!
+#2235
+1!
+#2240
+0!
+#2245
+1!
+#2250
+0!
+#2255
+1!
+#2260
+0!
+#2265
+1!
+#2270
+0!
+#2275
+1!
+#2280
+0!
+#2285
+1!
+#2290
+0!
+#2295
+1!
+#2300
+0!
+#2305
+1!
+#2310
+0!
+#2315
+1!
+#2320
+0!
+#2325
+1!
+#2330
+0!
+#2335
+1!
+#2340
+0!
+#2345
+1!
+#2350
+0!
+#2355
+1!
+#2360
+0!
+#2365
+1!
+#2370
+0!
+#2375
+1!
+#2380
+0!
+#2385
+1!
+#2390
+0!
+#2395
+1!
+#2400
+0!
+#2405
+1!
+#2410
+0!
+#2415
+1!
+#2420
+0!
+#2425
+1!
+#2430
+0!
+#2435
+1!
+#2440
+0!
+#2445
+1!
+#2450
+0!
+#2455
+1!
+#2460
+0!
+#2465
+1!
+#2470
+0!
+#2475
+1!
+#2480
+0!
+#2485
+1!
+#2490
+0!
+#2495
+1!
+#2500
+0!
+#2505
+1!
+#2510
+0!
+#2515
+1!
+#2520
+0!
+#2525
+1!
+#2530
+0!
+#2535
+1!
+#2540
+0!
+#2545
+1!
+#2550
+0!
+#2555
+1!
+#2560
+0!
+#2565
+1!
+#2570
+0!
+#2575
+1!
+#2580
+0!
+#2585
+1!
+#2590
+0!
+#2595
+1!
+#2600
+0!
+#2605
+1!
+#2610
+0!
+#2615
+1!
+#2620
+0!
+#2625
+1!
+#2630
+0!
+#2635
+1!
+#2640
+0!
+#2645
+1!
+#2650
+0!
+#2655
+1!
+#2660
+0!
+#2665
+1!
+#2670
+0!
+#2675
+1!
+#2680
+0!
+#2685
+1!
+#2690
+0!
+#2695
+1!
+#2700
+0!
+#2705
+1!
+#2710
+0!
+#2715
+1!
+#2720
+0!
+#2725
+1!
+#2730
+0!
+#2735
+1!
+#2740
+0!
+#2745
+1!
+#2750
+0!
+#2755
+1!
+#2760
+0!
+#2765
+1!
+#2770
+0!
+#2775
+1!
+#2780
+0!
+#2785
+1!
+#2790
+0!
+#2795
+1!
+#2800
+0!
+#2805
+1!
+#2810
+0!
+#2815
+1!
+#2820
+0!
+#2825
+1!
+#2830
+0!
+#2835
+1!
+#2840
+0!
+#2845
+1!
+#2850
+0!
+#2855
+1!
+#2860
+0!
+#2865
+1!
+#2870
+0!
+#2875
+1!
+#2880
+0!
+#2885
+1!
+#2890
+0!
+#2895
+1!
+#2900
+0!
+#2905
+1!
+#2910
+0!
+#2915
+1!
+#2920
+0!
+#2925
+1!
+#2930
+0!
+#2935
+1!
+#2940
+0!
+#2945
+1!
+#2950
+0!
+#2955
+1!
+#2960
+0!
+#2965
+1!
+#2970
+0!
+#2975
+1!
+#2980
+0!
+#2985
+1!
+#2990
+0!
+#2995
+1!
+#3000
+0!
+#3005
+1!
+#3010
+0!
