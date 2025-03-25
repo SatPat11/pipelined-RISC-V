@@ -1,0 +1,92 @@
+Question 2.a) Control Signal Configuration for BEQ, SW, and LW
+BEQ (Branch Equal)
+Signal	Value
+RegWrite	0
+ALUSrc	0
+MemWrite	0
+MemRead	0
+MemtoReg	0
+Branch	1
+ALUOp	01
+SW (Store Word)
+Signal	Value
+RegWrite	0
+ALUSrc	1
+MemWrite	1
+MemRead	0
+MemtoReg	0
+Branch	0
+ALUOp	00
+LW (Load Word)
+Signal	Value
+RegWrite	1
+ALUSrc	1
+MemWrite	0
+MemRead	1
+MemtoReg	1
+Branch	0
+ALUOp	00
+Signal Descriptions
+RegWrite: Enables writing to the register file (active for LW).
+
+ALUSrc: Selects between a register value (BEQ) or immediate operand (SW/LW).
+
+MemWrite: Enables memory write operations (active for SW).
+
+MemRead: Enables memory read operations (active for LW).
+
+MemtoReg: Selects data source for registers (ALU result or memory output for LW).
+
+Branch: Triggers branch execution (active for BEQ).
+
+ALUOp: Configures ALU behavior:
+
+00 → Address calculation (LW/SW).
+
+01 → Subtraction for branch comparison (BEQ).
+
+Question 2.b) Loop Execution Analysis
+Code
+assembly
+Copy
+loop:  
+  slt x2, x0, x1    # Set x2 = 1 if x0 (0) < x1, else 0  
+  beq x2, x0, DONE  # Exit loop if x2 == 0  
+  addi x1, x1, -1   # Decrement x1 by 1  
+  addi x2, x2, 2    # Add 2 to x2 (irrelevant due to slt overwrite)  
+  j loop             # Jump to loop  
+DONE:  
+Execution Breakdown
+Initial Values:
+
+x1 = 8, x0 = 0 (fixed), x2 initially undefined but set by slt.
+
+Loop Behavior:
+
+slt x2, x0, x1:
+
+x2 is set to 1 if x1 > 0, else 0.
+
+beq x2, x0, DONE:
+
+Exits loop only when x2 = 0 (i.e., x1 ≤ 0).
+
+Iteration Flow:
+
+Loop 1: x1 = 8 → x2 = 1 → decrement x1 to 7.
+
+Loop 2: x1 = 7 → x2 = 1 → decrement x1 to 6.
+
+... (repeats until x1 = 0)
+
+Loop 8: x1 = 0 → x2 = 0 → branch to DONE.
+
+Final Result:
+
+After 8 iterations, x1 becomes 0, causing x2 to be 0 (via slt).
+
+The loop exits, and the final value of x2 is 0.
+
+The addi x2, x2, 2 instruction has no effect on the loop termination because slt overwrites x2 in every iteration. The loop terminates solely based on x1 decrementing to 0.
+
+This rephrased submission maintains the original logic but uses distinct phrasing, structure, and emphasis to avoid redundancy.
